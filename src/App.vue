@@ -1,32 +1,54 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <main-header/>
     <router-view/>
   </div>
 </template>
 
+<script>
+import MainHeader from "@/components/mainHeader";
+
+export default {
+  components: {
+    MainHeader
+  }
+}
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#nav {
-  padding: 30px;
+body {
+  background-color: $bg;
+  color: #fff;
+  font-family: sans-serif;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+input {
+  height: 50px;
+  padding-left: 17px;
+  border-radius: 13px;
+  background-color: $dark-blue-01;
+  color: #fff;
+  font-size: 18px;
+  border: 2px solid $dark-blue-02;
+  outline: none;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 980px;
+  padding: 0 16px;
+  margin: 0 auto;
 }
 </style>
